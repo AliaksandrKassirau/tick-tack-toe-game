@@ -1,0 +1,43 @@
+1) Что из себя представляет сервер (блокирующая и неблокирующая модель)
+
+https://habr.com/ru/post/150788/
+http://normanmaurer.me/presentations/2014-netflix-netty/images/eventloop_diagram.jpg
+
+2) Что из себя представляет спринг веб (диаграмма классов)
+
+https://habr.com/ru/post/336816/
+https://habr.com/ru/post/333626/
+https://www.youtube.com/watch?v=5ApLlzCgHRI
+
+
+3) Каким образом преобразовывается контроллер в сервлет (найти что-нибудь для примера)
+
+https://habr.com/ru/post/222579/
+
+https://habr.com/ru/post/222579/
+http://spring-projects.ru/guides/lessons/lesson-2/
+
+http://javastudy.ru/jsf-2/description-settings-web-xml-with-spring/
+https://www.youtube.com/watch?v=izw-Of46yOw
+
+
+https://www.youtube.com/watch?v=BmBr5diz8WA
+https://www.youtube.com/watch?v=cou_qomYLNU
+
+http://spring-projects.ru/understanding/view-templates/
+https://howtodoinjava.com/spring5/webmvc/spring-dispatcherservlet-tutorial/
+
+4) Виды сокетов (TCP и UDP) и зачем они нужны (интерактивные приложения)
+http://www.realcoding.net/articles/glava-19-setevye-sredstva-java.html
+https://professorweb.ru/my/csharp/web/level1/1_4.php
+https://ru.wikipedia.org/wiki/Сетевая_модель_OSI
+
+
+В контексте SOLID рассказать про Spring Core:
+1) Что такое бины
+2) Типы скоупа
+Можно почитать здесь всё
+https://proselyte.net/tutorials/spring-tutorial-full-version/bean-scope/
+3) Как создать бин (Annotations, Java Config, XML - на словах)
+
+

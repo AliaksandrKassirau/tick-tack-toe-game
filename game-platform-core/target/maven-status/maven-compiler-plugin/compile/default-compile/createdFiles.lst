@@ -1,0 +1,13 @@
+com\grsu\game\platform\ticktacktoe\player\GamePlayer.class
+com\grsu\game\platform\ticktacktoe\player\AbstractPlayer.class
+com\grsu\game\platform\ticktacktoe\field\AbstractField.class
+com\grsu\game\platform\Application.class
+com\grsu\game\platform\ticktacktoe\GameStats.class
+com\grsu\game\platform\ticktacktoe\field\Field.class
+com\grsu\game\platform\ticktacktoe\Game$Status.class
+com\grsu\game\platform\ticktacktoe\Game.class
+com\grsu\game\platform\ticktacktoe\player\RandomMovePlayer.class
+com\grsu\game\platform\ticktacktoe\field\ConsoleField.class
+com\grsu\game\platform\ticktacktoe\field\Figure.class
+com\grsu\game\platform\shared\User.class
+com\grsu\game\platform\ticktacktoe\PlayersMove.class

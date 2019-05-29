@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        var url = window.location.href;
+        var index = url.lastIndexOf("/");
+        var gameId = url.substr(index)
+        var webSocket = new WebSocket('ws://localhost:8080/game' + gameId + '/player/' + $.cookie('session'));
+
+        webSocket.onerror = function(event) {
+             console.log(event);
+        };
+
+        webSocket.onopen = function(event) {
+            console.log(event);
+        };
+
+        webSocket.onmessage = function(event) {
+             console.log(event);
+             var field = JSON.parse(event.data).field;
+             for (var i = 0; i < field.length; i++) {
+                 for (var j = 0; j < field.length; j++) {
+                     var selector = "td[i=" + i + "][j=" + j + "]";
+
+                     var textToRender;
+                     if (field[i][j] === 'TIC_TAC') {
+                         $(selector).text("X");
+                     } else if (field[i][j] === 'TOE') {
+                         $(selector).text("0");
+                     }
+                 }
+             }
+        };
+
+        $(document).ready(function () {
+            $("td").click(function (event) {
+                webSocket.send('{"type": "PLAYERS_MOVE", "payload": {"i": ' + $(event.target).attr("i") + ', "j": ' + $(event.target).attr("j") + '}}')
+            });
+            webSocket.send('{"type": "REQUEST_FIELD_STATE"}');
+        });
+
+    </script>
+    <style>
+        .container {
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="players-container">
+            <div class="player player-left"></div>
+            <div class="player player-right"></div>
+        </div>
+        <div class="field-container">
+            <table class="field-table">
+                <tr>
+                    <td i="0" j="0">_</td>
+                    <td i="0" j="1">_</td>
+                    <td i="0" j="2">_</td>
+                </tr>
+                <tr>
+                    <td i="1" j="0">_</td>
+                    <td i="1" j="1">_</td>
+                    <td i="1" j="2">_</td>
+                </tr>
+                <tr>
+                    <td i="2" j="0">_</td>
+                    <td i="2" j="1">_</td>
+                    <td i="2" j="2">_</td>
+                </tr>
+            </table>
+        </div>
+        <div class="change-log">
+
+        </div>
+
+    </div>
+
+</body>
+</html>
